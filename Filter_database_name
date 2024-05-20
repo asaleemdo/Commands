@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Define the path variable
+path='/home/832229.cloudwaysapps.com/vxukmzsgdy/public_html'
+
+# Check the path and run the appropriate command
+if [[ $path == /home/832229.cloudwaysapps.com/* ]]; then
+    echo $path | awk -F'/' '{print $(NF-1)}'
+elif [[ $path == /home/master/applications/* ]]; then
+    echo $path | awk -F'/' '{print $(NF-1)}'
+else
+    echo "Path does not match any known pattern."
+fi
